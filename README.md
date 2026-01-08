@@ -11,6 +11,6 @@ Discover the purpose of the mystery function.
 ## Scripts
 
 - `npm run build`: Create a pure JS version in `lib/index.js`
-    - This might be helpful if you want to try out the code elsewhere
+  - This might be helpful if you want to try out the code elsewhere
 - `npm test`: Run the tests in `src/index.test.ts`
 - `npm run typecheck`: Check types with TypeScript

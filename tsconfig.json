@@ -1,15 +1,13 @@
 {
-  "extends": "@tsconfig/node24/tsconfig.json",
-  "compilerOptions": {
-    // Basic build options
-    "declaration": true,
-    "outDir": "lib",
-    // Only use syntax that Node can strip out (e.g. no Enums)
-    "erasableSyntaxOnly": true,
-    // Use .ts extensions in source but .js when transpiled.
-    "allowImportingTsExtensions": true,
-    "rewriteRelativeImportExtensions": true
-  },
-  "include": ["src/"],
-  "exclude": ["**/*.test.ts"]
+	"extends": "@tsconfig/node24/tsconfig.json",
+	"compilerOptions": {
+		// Basic build options
+		"declaration": true,
+		"outDir": "lib",
+		// Only use syntax that Node can strip out (e.g. no Enums)
+		"erasableSyntaxOnly": true,
+		// Use .ts extensions in source but .js when transpiled.
+		"allowImportingTsExtensions": true,
+		"rewriteRelativeImportExtensions": true
+	}
 }
