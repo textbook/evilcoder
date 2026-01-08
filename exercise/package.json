@@ -1,0 +1,8 @@
+{
+	"name": "exercise",
+	"type": "module",
+	"scripts": {
+		"build": "tsc --project tsconfig.build.json",
+		"test": "node --test"
+	}
+}

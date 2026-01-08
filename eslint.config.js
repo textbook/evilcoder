@@ -8,7 +8,7 @@ export default defineConfig(
 	tseslint.configs.recommended,
 	tseslint.configs.recommendedTypeCheckedOnly.map((config) => ({
 		...config,
-		files: ["src/**/*.ts"],
+		files: ["**/*.ts"],
 		languageOptions: {
 			parserOptions: {
 				projectService: true,
@@ -16,7 +16,7 @@ export default defineConfig(
 		},
 	})),
 	{
-		files: ["src/**/*.test.ts"],
+		files: ["**/*.test.ts"],
 		rules: {
 			"@typescript-eslint/no-floating-promises": "off",
 		},
