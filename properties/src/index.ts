@@ -43,10 +43,10 @@ export const properties: Record<string, Predicate> = {
 	},
 };
 
-function createMapping(
-	input: number[],
-	output: number[],
-): Record<number, number[] | undefined> {
+function createMapping<K extends string | number | symbol, V>(
+	input: K[],
+	output: V[],
+): Record<K, V[] | undefined> {
 	return input.reduce(
 		(map, value, index) => {
 			if (!(value in map)) {
@@ -57,7 +57,7 @@ function createMapping(
 			}
 			return map;
 		},
-		{} as Record<number, number[]>,
+		{} as Record<K, V[]>,
 	);
 }
 
