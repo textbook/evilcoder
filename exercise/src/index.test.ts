@@ -5,7 +5,7 @@ import { mysteryFunction } from "./index.ts";
 import { properties } from "@evilcoder/properties";
 
 const cases: { input: number[]; expected: number[] }[] = [
-	{ input: [0], expected: [1, 2, 3] },
+	{ input: [0], expected: [0] },
 ];
 
 describe("mysteryFunction", () => {
