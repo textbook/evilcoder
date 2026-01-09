@@ -7,6 +7,9 @@ export const properties: Record<string, Predicate> = {
 			output.every((value) => typeof value === "number")
 		);
 	},
+	["creates a new array"](input, output) {
+		return input !== output;
+	},
 	["preserves array length"](input, output) {
 		return input.length === output.length;
 	},
@@ -32,6 +35,17 @@ export const properties: Record<string, Predicate> = {
 		return Object.values(outputMap).every(
 			(outputValues) => unique(outputValues ?? []).length === 1,
 		);
+	},
+	["does not map different inputs to the same output"](input, output) {
+		const outputMap = createMapping(input, output);
+		const uniqueInputs = unique(input);
+		return uniqueInputs.every((uniqueInput) => {
+			const otherInputs = uniqueInputs.filter((value) => value !== uniqueInput);
+			const relevantOutput = outputMap[uniqueInput]?.[0] ?? null;
+			return otherInputs
+				.map((otherInput) => outputMap[otherInput]?.[0] ?? null)
+				.every((otherOutput) => otherOutput !== relevantOutput);
+		});
 	},
 	["maps larger inputs to larger outputs"](input, output) {
 		const outputMap = createMapping(input, output);
