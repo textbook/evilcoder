@@ -7,7 +7,7 @@
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint --max-warnings=0 .",
 		"lint:fix": "npm run format && eslint --fix .",
-		"prepare": "npm --workspace properties run build",
+		"prepare": "npm run build",
 		"test": "npm --workspaces --if-present test",
 		"typecheck": "tsc --noEmit",
 		"verify": "npm run build && npm --workspace verification run verify"
