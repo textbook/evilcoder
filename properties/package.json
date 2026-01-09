@@ -1,0 +1,10 @@
+{
+	"name": "@evilcoder/properties",
+	"private": true,
+	"type": "module",
+	"main": "lib/index.js",
+	"devDependencies": {},
+	"scripts": {
+		"build": "tsc --project tsconfig.build.json"
+	}
+}

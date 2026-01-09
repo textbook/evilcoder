@@ -22,5 +22,5 @@ export default defineConfig(
 		},
 	},
 	prettier,
-	globalIgnores(["exercise/lib"]),
+	globalIgnores(["exercise/lib", "properties/lib"]),
 );

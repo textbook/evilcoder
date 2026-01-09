@@ -3,10 +3,11 @@
 	"description": "Discover the purpose of the mystery function",
 	"type": "module",
 	"scripts": {
-		"build": "npm --workspace exercise run build",
+		"build": "npm --workspaces --if-present run build",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint --max-warnings=0 .",
 		"lint:fix": "npm run format && eslint --fix .",
+		"prepare": "npm --workspace properties run build",
 		"test": "npm --workspaces --if-present test",
 		"typecheck": "tsc --noEmit",
 		"verify": "npm run build && npm --workspace verification run verify"
@@ -26,7 +27,11 @@
 		"typescript-eslint": "^8.52.0"
 	},
 	"workspaces": [
+		"properties",
 		"exercise",
 		"verification"
-	]
+	],
+	"engines": {
+		"node": "^24.11"
+	}
 }
