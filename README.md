@@ -1,4 +1,4 @@
-#  Evil coder
+# Evil coder
 
 Discover the purpose of the mystery function.
 
