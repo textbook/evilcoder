@@ -1,6 +1,7 @@
 import cyf from "@codeyourfuture/eslint-config-standard";
 import { defineConfig, globalIgnores } from "eslint/config";
 import prettier from "eslint-config-prettier/flat";
+import importPlugin from "eslint-plugin-import";
 import tseslint from "typescript-eslint";
 
 export default defineConfig(
@@ -19,6 +20,21 @@ export default defineConfig(
 		files: ["**/*.test.ts"],
 		rules: {
 			"@typescript-eslint/no-floating-promises": "off",
+		},
+	},
+	{
+		plugins: { import: importPlugin },
+		rules: {
+			"import/order": [
+				"error",
+				{
+					alphabetize: { order: "asc" },
+					groups: ["builtin", "external", "internal"],
+					"newlines-between": "always",
+					pathGroups: [{ pattern: "@evilcoder/*", group: "internal" }],
+					pathGroupsExcludedImportTypes: ["builtin"],
+				},
+			],
 		},
 	},
 	prettier,

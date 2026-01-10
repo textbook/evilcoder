@@ -1,8 +1,9 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 
-import { mysteryFunction } from "./index.ts";
 import { properties } from "@evilcoder/properties";
+
+import { mysteryFunction } from "./index.ts";
 
 const cases: { input: number[]; expected: number[] }[] = [
 	{ input: [0], expected: [0] },
